@@ -1,0 +1,42 @@
+Un réseau est un ensemble d'ordinateurs pouvant échanger des informations.
+Deux ordinateurs peuvent échanger si et seulement si ils sont connectés
+Capacité IPv4 (2^8)^4 <=> 2^32
+Capacité IPv6 (2^16)^8 <=> 2^128
+Ipconfig sur vsc pour avoir l'adresse ip.
+Obtenir l’IP local de ta machine ( il s’agit de l’adresse IPv4 pour Internet Protocol) (https://www.mon-ip.com/adresse-ip-locale.php)
+Obtenir l’IP public de ta machine (https://adresseip.com/)
+Localiser géographiquement ton IP (https://trouver-ip.com/)
+L'adresse 127.0.0.1 correspond toujour à la machine sur laquelle on travaille.
+x.x.x.0 C'est l'adresse du réseau local.
+x.x.x.255 c'est l'adresse du broadcast. En envoyant un paquet a celle-çi, l'envoierais a tous les ordinateurs du réseau.
+Switch : Communiquer avec un réseau local 
+Routeur : Quitter le réseau local
+
+EX8:
+Table de routage d'un routeur G : (Routage dynamique)
+ _________________________________________________________
+| Destination |    Passerelle    | Interface |  Métrique  |
+|_____________|__________________|___________|____________|
+|      R2     | Rien ou (G eth0) |    eth0   |     0      |
+|      RA     | Rien ou (G eth1) |    eth1   |     0      |
+|      R1     | Routeur A eth1   |    eth1   |     1      |
+|      R3     | Routeur A eth1   |    eth1   |     1      |
+|_____________|__________________|___________|____________|
+
+EX9:
+Table de routage d'un routeur A : _________________________________________________________
+| Destination |    Passerelle    | Interface |  Métrique  |
+|_____________|__________________|___________|____________|
+|   Réseau B  |       Rien       |    eth1   |     0      |
+|   Réseau C  |       Rien       |    eth2   |     0      |
+|   Réseau R1 |       Rien       |    eth0   |     0      |
+|   Réseau R2 |     Routeur C    |    eth2   |     1      |
+|   Réseau R3 |     Routeur B    |    eth1   |     1      |
+|_____________|__________________|___________|____________|
+
+Donc le chemain le plus court est le suivant : 
+- A => R1 => Routeur A => routeur B => R3 => C
+
+Protocole OSPF :
+- coût = 10^8 / débit (en bits/sec)
+

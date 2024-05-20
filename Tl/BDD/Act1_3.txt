@@ -1,0 +1,90 @@
+Entités :
+1.Entreprise
+Attributs : Nom (PK), Secteur, Adresse
+
+2.SujetDeStage
+Attributs : ID (PK), Sujet, Durée, Rémunération
+
+3.Etudiant
+Attributs : Matricule (PK), Nom, Prénom, Email, Téléphone
+
+4.PropositionDeStage
+Attributs : ID (PK), Date, Etat (En attente, Acceptée, Refusée)
+
+5.ConventionDeStage
+Attributs : ID (PK), DateDébut, DateFin, Remuneration
+
+6.Enseignant
+Attributs : ID (PK), Nom, Prénom, Email
+
+7.VisiteEnseignant
+Attributs : ID (PK), DateVisite
+
+
+
+
+
+Relations :
+1.Propose
+Entreprise (1) ----< PropositionDeStage (0..N) ---- SujetDeStage
+
+2.Contacte
+Etudiant (N) ----< PropositionDeStage (0..N) ----> Entreprise
+
+3.PrendRendezVous
+Entreprise (1) ----< PropositionDeStage (0..N) ---- Etudiant (N)
+
+4.Effectue
+PropositionDeStage (1) ----< ConventionDeStage (1)
+
+5.Encadre
+Enseignant (1) ----< ConventionDeStage (1)
+
+6.EffectueVisite
+Enseignant (1) ----< VisiteEnseignant (0..N) ----> Entreprise (1)
+
+
+
+
+
+
+Repr MLD:
++------------------+          +---------------------+          +---------------+
+|    Entreprise    |          |   SujetDeStage      |          |   Etudiant    |
++------------------+          +---------------------+          +---------------+
+| Nom (PK)         |          | ID (PK)             |          | Matricule (PK)|
+| Secteur          |          | Sujet               |          | Nom           |
+| Adresse          |----------| Durée               |          | Prénom        |
+|                  |          | Rémunération        |          | Email         |
++------------------+          +---------------------+          | Téléphone     |
+                                                               +---------------+
+         |                                |                            |
+         |                                |                            |
+         |                                |                            |
++------------------+           +----------------------+         +---------------+
+| PropositionDeSt. |           | ConventionDeStage    |         | Enseignant    |
++------------------+           +----------------------+         +---------------+
+| ID (PK)          |           | ID (PK)              |         | ID (PK)       |
+| Date             |-----------| DateDébut            |         | Nom           |
+| Etat             |           | DateFin              |         | Prénom        |
+|                  |           | Remuneration         |         | Email         |
+|                  |           |                      |         +---------------+
++------------------+           +----------------------+   
+         |                                 |                   |
+         |                                 |                   |
+         |                                 |                   |
+         |                      +----------------------+     |
+         |                      | VisiteEnseignant     |     |
+         +----------------------|                      |     |
+                                +----------------------+     |
+                                               |            |
+                                               |            |
+                                      +----------------------+
+                                      | PrendRendezVous      |
+                                      |                      |
+                                      +----------------------+
+                                               |
+                                      +----------------------+
+                                      | Contacte             |
+                                      |                      |
+                                      +----------------------+
