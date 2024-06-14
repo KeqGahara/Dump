@@ -1,0 +1,100 @@
+File <=> LARGEUR 
+
+parcours_largeur(self,a):
+  f = File()
+  f.enfiler(a)
+  sommets_visités=[]
+  while f is not []:
+    s = f.defiler()
+    for s.adj in f :
+      if s not in sommet_visités:
+        f.(s)
+  return(sommets_visités)
+
+G = {a:['b','c'],'b':['a','b'],'c':['a','d'],'d':['b','c','e'],'e':['b','d','g','f'],'f':['e','g'],'g':['f','h'],'h':['g']}
+
+Exercice 1:
+tour 1 :
+s = 'b'
+sommets_visités = ['b']
+f = ['e','d','a']
+
+tour 2 :
+s = 'a'
+sommmets_visités = ['b','a']
+f = ['c','e','d']
+
+tour 3 :
+s = 'd'
+sommets_visités = ['b','a','d']
+f = ['c','e']
+
+tour 4 :
+s = 'e'
+sommets_vistés = ['b','a','d','e']
+f = ['g','f','c']
+
+tour 5 :
+s = 'c'
+sommets_visités = ['b','a','d','e','c']
+f = ['g','f']
+
+tour 6 :
+s = 'f'
+sommets_visités = ['b','a','d','e','c','f']
+f = ['g']
+
+tour 7 :
+s = 'g'
+sommets_visités = ['b','a','d','e','c','f','g']
+f = []
+
+
+Pile <=> Profondeur
+
+sommets_visités = [’g’]
+sommets_retenus = []
+p = Pile()
+p.empiler(’g’)
+while p is not estVide :
+  s = p.sommet()
+  voisins = s.adj
+  Si s.adj is not [] :
+    v = élément au hasard de voisins
+    Ajouter v dans sommets_visités
+    p.empiler(v)
+  else :
+    Ajouter s dans sommets_retenus
+    p.depiler()
+  return(sommets_visités)
+
+G = {'a':['b','c'],'b':['a','b'],'c':['a','d'],'d':['b','c','e'],'e':['b','d','g','f'],'f':['e','g'],'g':['f','h'],'h':['g']}
+
+Exercice 2 :
+tour 1 :
+s : ’g’
+voisins : [’e’,’f’,’h’]
+v : ’e’
+sommets_visités : [’g’,’e’]
+p : [’g’,’e’]
+sommets_retenus : []
+
+tour 2 :
+s : 'e'
+voisins : ['b','d','f']
+v : 'b'
+sommets_visités : ['b', 'e','g']
+p : ['b','e','g']
+sommets_retenus : []
+
+tour 3 :
+s : 'b'
+voisins : ['a','d']
+v : 'a'
+sommets_visités : ['a','b','e','g']
+p : ['a','b','e','g']
+sommets_retenus : []
+
+tour 4 :
+s : 'a'
+

@@ -50,7 +50,7 @@ def fusion(T1,T2):
     ATTENTION ces Deux listes doivent avoir des éléments de même type
     OUT : liste de int, float, str.
     Fusion de deux listes T1 et T2.
-    Ordre brute, c'est à dire qu'on initialise au premier élément le plus petit pour ensuite effectuer un tri croissant du reste de T1 et T2.
+    Ordre brute, c'est à dire de T1 à T2.
     '''
     assert type(T1) == list
     assert type(T2) == list
@@ -59,8 +59,8 @@ def fusion(T1,T2):
         return T2
     if T2==[]:
         return T1
-        # Ces deux conditions if vérifient si l'une des listes est vide
-        # Elles servent aussi de cas initial pour l'appel recursive 
+        # Ces deux conditions if verifient si l'une des listes est vide
+        # Elles servent aussi de cas inital pour l'appel reccursive 
     if len(T1)<len(T2):
         for i in range(len(T1)):
             assert type(T1[i])==type(T2[i])
@@ -74,15 +74,15 @@ def fusion(T1,T2):
             assert type(T1[i])==type(T2[i])
         for j in range(len(T1)-len(T2)-1):
             assert type(T2[j])==type(T2[0])
-        # Ces asserts vérifient si les éléments des deux listes a fusionner sont de même type (car la fonction ne marche pas si les elements des deux listes n'ont pas le même type)
+        # Ces asserts verifient si les éléments des deux listes a fusioner sont de même type (car la fonction ne marche pas si les elements des deux listes n'ont pas le même type)
 
     if T1[0]<T2[0]:
-        # Determination de l'ordre d'operations, c'est à dire le sens du découpage 
+        # Dertermiantion de l'odre d'operations, c'est à dire le sens du découpage 
         return [T1[0]]+fusion(T1[1:],T2)
-            # Premier cas (appel recursive)
+            # Premier cas (appel reccursive)
     else:
         return[T2[0]]+fusion(T1,T2[1:])
-            # Deuxième cas (appel recursive)
+            # Deusième cas (appel reccursive)
 
 def trifusion(T) :
     '''
@@ -93,12 +93,12 @@ def trifusion(T) :
     assert type(T) == list
     if len(T)<=1 :
         return T
-            # Le cas de base pour la recursion 
+            # Le cas de base pour la reccursion 
     T1=[T[x] for x in range(len(T)//2)]
     T2=[T[x] for x in range(len(T)//2,len(T))]
         # L'action de découpage
     return fusion(trifusion(T1),trifusion(T2))
-        # L'action de fusion (l'appel recursive)
+        # L'action de fusion (l'appel reccursive)
 
 
 if __name__ == "__main__":
@@ -108,3 +108,5 @@ if __name__ == "__main__":
     print('L2 =', L2 ,'\n','Le trifusion de L2 est : ',trifusion(L2))
     L3 = fusion(L1,L2)
     print('L3 fusion de L1 et L2 :',L3,'\n','Le trifusion de L3 est : ',trifusion(L3))
+
+

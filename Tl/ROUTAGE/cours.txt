@@ -24,11 +24,12 @@ Table de routage d'un routeur G : (Routage dynamique)
 |_____________|__________________|___________|____________|
 
 EX9:
-Table de routage d'un routeur A : _________________________________________________________
+Table de routage d'un routeur A : 
+_________________________________________________________
 | Destination |    Passerelle    | Interface |  Métrique  |
 |_____________|__________________|___________|____________|
-|   Réseau B  |       Rien       |    eth1   |     0      |
-|   Réseau C  |       Rien       |    eth2   |     0      |
+|   Routeur B |       Rien       |    eth1   |     0      |
+|   Routeur C |       Rien       |    eth2   |     0      |
 |   Réseau R1 |       Rien       |    eth0   |     0      |
 |   Réseau R2 |     Routeur C    |    eth2   |     1      |
 |   Réseau R3 |     Routeur B    |    eth1   |     1      |
@@ -40,3 +41,10 @@ Donc le chemain le plus court est le suivant :
 Protocole OSPF :
 - coût = 10^8 / débit (en bits/sec)
 
+EX10:
+Destination      Passerelle    Interface  Métrique
+Routeur B        Routeur B     A-B         1
+Routeur C        Routeur C     A-C         10
+
+EX11:
+Le chemin emprunté est via le routeur B1

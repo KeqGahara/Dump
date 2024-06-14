@@ -10,19 +10,24 @@ class Liste:
         if i<2:
             return self.valeurs[i]
 
-    def estVide(self):
+    def estvide(self):
         return self.valeurs==[]
 
     def tete(self):
-        assert not self.estvide() ; #liste vide
+        assert not self.estvide() #liste vide
         return self.valeurs[0]
 
     def queue(self):
-        assert not self.estvide() ; #liste vide
+        assert not self.estvide() #liste vide
         return self.valeurs[1]
 
+    def ajouterEnTete(self, x):
+        self.valeurs[0]=(x,self.tete)
+        return self.valeurs
+    
+
     def supprTete(self):
-        assert not self.estvide(); #liste vide
+        assert not self.estvide() #liste vide
         a = self.valeurs[0]
         self.valeurs = self.valeurs[1]
         return a
@@ -34,7 +39,7 @@ class Liste:
             return 1+self.queue().longueur()
         
     def concatener(self, L2):
-        if self.estVide():
+        if self.estvide():
             return L2
         else:
             x = self.tete()

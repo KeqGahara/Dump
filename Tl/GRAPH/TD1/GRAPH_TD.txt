@@ -1,0 +1,27 @@
+Exercice 1 : 
+1. Il s'agit d'un graphe simple non ponderer et non orionter.
+2. La reponse troll : 
+Un graphe n'as pas de sommet donc il n'y a pas do'rdre definis, mais il existe des posiblilité de parcours pour ce graphe :
+- A => B => C => D
+- D => C => A => B
+- D => C => B => A
+- B => A => C => D
+
+La vraie reponse :
+L'ordre d'un graphe est son nomnbre de sommets, donc ordre = 4.
+
+3. l'ensemble de couples de sommets adjacents sont :
+{(A,B) ; (A,C) ; (C,D) ; (B,C) (\(B,A) ; (C,A) ; (D,C))}
+
+4. Le degré d'un sommmet est le nombre d'arrete issue de ce sommet, donc voici le degré de tous les sommets issue de ce graphe : 
+d°(A) = 2 ; d°(B) = 2 ; d°(C) = 3 ; d°(D) = 1
+
+5. Il faut rajouter deux arretes, une qui lie le sommet A et le sommet D et l'autre qui lie le sommet B au sommet D.
+
+6. Non, car le graphe ne comporte pas un aspect cyclique, c-à-d qu'on peux pas par example partir du sommet D et revenir vers ce sommet D sans retraverser un même somemet dans le parcours. 
+
+7. Oui, ce graphe est connexe car pour tous sommets il existe au moin une arrete. (Il n'y a pas de sommet isolé)
+
+Exercice 2 : 
+1. Il s'agit d'un graphe non pondérer et orionter.
+Suite corriger en classe.

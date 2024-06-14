@@ -1,0 +1,75 @@
+T.A.D minimale d'un Graphe non pondéré et non orionté :
+attribus :
+  - Sommet : de type T
+constructeur : 
+  - Graphe : => Graphe 
+sélecteur :
+  - sommets : Graphe => liste de sommets 
+  - sommet_voisin(s) : Graphe x sommet => liste de sommet(s)
+  - ordre : Graphe => int 
+mutateur :
+  - ajout_sommet : Graphe x sommet => Graphe 
+  - ajout_arrête : Graphe x sommet x sommet => Graphe 
+.
+Exercice 2 :
+T.A.D minimale d'un Graphe non pondéré et orionté :
+attribus :
+  - Sommet : de type T
+constructeur :
+  - Graphe : => Graphe 
+sélecteur :
+  - sommets : Graphe => liste de sommets 
+  - sommet_succedeur(s) : Graphe x sommet => liste de sommet(s)
+  - sommet_predecesseur(s) : Graphe x sommet => liste de sommet(s)
+  - ordre : Graphe => int 
+mutateur :
+  - ajout_sommet : Graphe x sommet => Graphe 
+  - ajout_arc : Graphe x sommmet x sommet => Graphe 
+.
+T.A.D minimale d'un Graphe pondéré et non orionté  
+attribus :
+  - Sommet : de type T
+  - poid : de type T
+constructeur :
+  - Graphe : => Graphe 
+sélecteur :
+  - sommet(s) : Graphe => liste de sommet(s)
+  - sommet_voisin(s) : Graphe x sommet => liste de sommet(s)
+  - poid_arrête : Graphe x sommet x sommet => T
+  - ordre : Graphe => int 
+mutateur :
+  - ajout_sommet : Graphe x sommet => Graphe 
+  - ajout_arrête : Graphe x sommmet x sommet x poid => Graphe 
+.
+T.A.D minimale d'un Graphe pondéré et orionté
+attribus :
+  - Sommet : de type T
+  - Poid : de type T 
+constructeur :
+  - Graphe : => Graphe 
+sélecteur :
+  - sommet(s) : Graphe => liste de sommet(s) 
+  - sommet_succedeur(s) : Graphe x sommet => liste de sommet(s)
+  - sommet_predecesseur(s) : Graphe x sommet => liste de sommet(s)
+  - poid_arc : Graphe x sommet x sommet => T
+  - ordre : Graphe => int 
+mutateur :
+  - ajout_sommet : Graphe x sommet => Graphe 
+  - ajout_arc : Graphe x sommmet x sommet x poid => Graphe 
+.
+
+Exercice 3 :
+G2 = Graphe()
+sommets <= ['A','B','C','D']
+pour sommet dans sommets :
+  ajout_sommet(G2,sommet)
+pour arc dans ['AB','AC','AD','DA','CD'] :
+  ajout_arc(G2,arc[0],arc[1])
+
+G1 = Graphe()
+pour arc dans ['AB','AC','CA','CD'] et pour poid dans [3,10,5,4]:
+  ajout_arc(G,arc[0],arc[1],poid)
+
+G1 = Graphe()
+pour arc,poid dans ['AB','AC','CA','CD'],[3,10,5,4]:
+  ajout_arc(G,arc[0],arc[1],poid)
